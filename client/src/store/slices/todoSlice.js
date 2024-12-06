@@ -61,7 +61,51 @@ export function createTodoAsync(payload) {
         return res.json();
       })
       .then((data) => {
-        console.log(data, "Data Baru");
+        dispatch(data, "Data Baru");
+      })
+      .catch(console.log);
+  };
+}
+
+export function updateTodoAsync(id, payload) {
+  return () => {
+    fetch(`http://localhost:3000/todos/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Data Gagal Diupdate!");
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data, "<<<<< Ini Datanya");
+      })
+      .catch(console.log);
+  };
+}
+
+export function deleteTodoAsync(id) {
+  return (dispatch, getState) => {
+    fetch(`http://localhost:3000/todos/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Data Tidak Terhapus!");
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data, "<<<<< Data Terhapus");
+        // Cata1
+        // dispatch(fetchTodosAsync()); Tidak baik digunakan untuk data yang besar atau banyak
+        // Cara2
+        console.log(getState(), "<<<<<< data dari Store");
+
+        const todos = getState().todoReducer.todos;
+        const filteredTodo = todos.filter((todo) => todo.id !== id);
+        dispatch(setTodos(filteredTodo));
       })
       .catch(console.log);
   };

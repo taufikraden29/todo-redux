@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchTodoAsync } from "../store/slices/todoSlice";
 import { useNavigate, useParams } from "react-router-dom";
+import { updateTodoAsync } from "../store/slices/todoSlice";
 
 export default function Edit() {
   const todo = useSelector((state) => state.todoReducer.todo);
@@ -25,7 +26,14 @@ export default function Edit() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Masukan", name, description);
+
+    const payload = {
+      name,
+      description,
+    };
+
+    dispatch(updateTodoAsync(id, payload));
+    navigate("/");
   }
 
   return (
@@ -35,6 +43,7 @@ export default function Edit() {
         <label>Nama</label>
         <br />
         <input
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline my-4"
           type="text"
           value={name}
           placeholder="Isi Dengan Nama Anda"
@@ -45,6 +54,7 @@ export default function Edit() {
         <label>Description</label>
         <br />
         <input
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline my-4"
           type="text"
           value={description}
           placeholder="Isi Dengan Penjelasan"

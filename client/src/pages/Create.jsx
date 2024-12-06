@@ -28,28 +28,26 @@ export default function Create() {
         <label>Nama</label>
         <br />
         <input
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline my-4"
           type="text"
           value={name}
           placeholder="Isi Dengan Nama Anda"
           onChange={(e) => setName(e.target.value)}
           required
         />
-        <br />
         <label>Description</label>
-        <br />
         <input
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline my-4"
           type="text"
           value={description}
           placeholder="Isi Dengan Penjelasan"
           onChange={(e) => setDescription(e.target.value)}
           required
         />
-        <br />
-
         <input
           type="submit"
           value="create"
-          className="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 border-b-4 border-orange-700 hover:border-orange-500 rounded"
+          className="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 border-b-4 border-orange-700 hover:border-orange-500 rounded w-full my-4"
           onClick={handleSubmit}
         />
       </form>

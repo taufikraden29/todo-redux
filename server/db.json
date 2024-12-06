@@ -1,14 +1,14 @@
 {
   "todos": [
     {
-      "id": "1",
-      "name": "Makan Padang",
-      "description": "Alamat"
+      "name": "Mangga",
+      "description": "Alamat",
+      "id": "1"
     },
     {
-      "id": "2",
-      "name": "Nasi Kuning",
-      "description": "Alamat"
+      "name": "Kuning Ajah",
+      "description": "Alamat",
+      "id": "2"
     },
     {
       "id": "3",
@@ -16,24 +16,9 @@
       "description": "Alamat"
     },
     {
-      "id": "4",
-      "name": "Todo baru",
-      "description": "Mantappp ouyyyy"
-    },
-    {
-      "id": "5",
-      "name": "Baru Banget",
-      "description": "Tester masuk maseh!"
-    },
-    {
-      "id": "6",
-      "name": "Asep",
-      "description": "Kieu we ngoding mah kadang error kadang sae!"
-    },
-    {
-      "id": "2e00",
-      "name": "Undang",
-      "description": "Tetser"
+      "name": "Raos Pisan",
+      "description": "Edited",
+      "id": "f8d1"
     }
   ]
 }
